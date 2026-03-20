@@ -1,3 +1,4 @@
+/* 
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
@@ -25,4 +26,12 @@ fn main() {
             }
         }
     }
+}
+*/ 
+fn main(){
+    println!(
+        "i have commented the dependency and its file if want to run 
+    again , uncomment the code and delete this part below the commented section and 
+    also uncomment the dependency in cargo.toml"
+           )
 }
