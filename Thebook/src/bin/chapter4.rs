@@ -10,7 +10,7 @@ Characters
 
 Compound Types 
 Tuples
-Arrays
+Array
 
 */
 use std::io;
@@ -21,6 +21,7 @@ fn main() {
     invalid_array_ele_access();
       
 }
+//let create a new funtion for rest of code ( lmao i learned this from AI hehe)
 
 fn _integer_float(){
     let _num1  = 22 ; //default to i32 
@@ -47,12 +48,6 @@ fn _integer_float(){
     let _remainder = 43 % 5 ; // 3
     
 } 
-    
-    
-
-//let create a new funtion for rest of code ( lmao i learned this from AI hehe)
-
-
 fn _boolean() {
     println!("hehe");
     let _t = true; //rust infers the type 
@@ -64,7 +59,6 @@ fn _character(){
         let _peace_bird = "🕊️";
         
 }
-
 fn _tuple(){
     //in tuple elements can have different types
     let tup: (i32, f64, u8) = (500, 6.4, 1); 
@@ -78,7 +72,6 @@ fn _tuple(){
     let _one = tup.2 ;
     println!("{five_hundred}");
 }
-
 fn _array(){
     //every element in array must have the same type and it have fixed length 
     let _a = [1,2,3,4,5,7];
@@ -92,8 +85,8 @@ fn _array(){
     let _second = _a[1]; // name_of_array[index]
     print!("{first}");
 }
-
 fn invalid_array_ele_access(){
+            //rust memory safety , small example
             let a = [1,2,3,4,5];
             println!("enter an array index");
             let mut index = String::new() ;
