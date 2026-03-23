@@ -1,15 +1,15 @@
 //control flow
 
 fn main(){
-      if_use();
-      if_use2();
+      if_basic();
+      if_comparision();
 }
 
 //if expressions we provide condition and then state
 //->If this condition is met, run this block of code. 
 //If the condition is not met, do not run this block of code.
 
-fn if_use(){
+fn if_basic(){
     let number = 3;
     if number < 5 {
         println!("condition was true");
@@ -30,7 +30,7 @@ fn if_use(){
 
 //for above , rather than that we can do 
 
-fn if_use2(){
+fn if_comparision(){
          let number = 3 ;
          if number != 0 {
             println!("number was something other than zero");
@@ -40,7 +40,7 @@ fn if_use2(){
 
 //handling multiple conditions with else if
 
-fn _if_use3(){
+fn _if_else_chain(){
          let number = 6;
          if number % 4 ==0 {
             println!("number is divisible by 4");
@@ -62,7 +62,7 @@ fn _if_use3(){
 
 // because 'if' is an expression we can use it on the right side of a 'let' statement to assign the output to a variable 
 
-fn _if_use4(){
+fn _if_expression(){
     let condition = true;
     let number = if condition {5} else {6};  //condition is true so output = 5
     println!("the value of number is : {number}"); //the value of number is : 5
@@ -71,5 +71,5 @@ fn _if_use4(){
 
 
 
-// REPETITION WITH LOOPS
+
 
