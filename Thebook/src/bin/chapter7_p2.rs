@@ -4,7 +4,7 @@ fn main(){
      //_loop_value_return();
      //_loop_labels();
     // _while_loop();
-     
+    //_for_loop_use();
 }
 
 /*fn loop_basic(){
@@ -65,3 +65,40 @@ fn _while_loop() {
 }
 
 //Looping Through a Collection with for
+
+// we can use 'while' contruct to loop over the elements of a collection, such as an array 
+
+fn _while_with_array() {
+             let a = [10,20,30,40,50] ;
+             let mut index = 0;
+
+             while index<5 {
+                println!("the value is: {}", a[index]);
+                index += 1;
+             }
+}
+
+//as a more concise alternative we can use 'for' loop
+
+fn _for_with_array() {
+         let a = [10,20,30,40,50];
+         for element in a{
+            println!("the value is: {element})");
+         }
+}
+//point->Using the for loop, you wouldn’t need to remember to change any other code if you changed the number of values in the array
+//now it will increase safety of code to 
+
+
+// creating _while_loop() using for 
+
+fn _for_loop_use() {
+    for number in (1..4).rev() {       //range 1 to 4 (will go only till 3) and with ().rev() 
+        println!("{number}");          // so ().rev() will print the 3 first and then 2 then 1 and then 
+    }                                   // where 'while' checked if it is equal to 0 , it will not check anything and will only run till where assigned so it is safe
+    println!("LIFTOFF!!!");  //and loop breaked and last value 
+    
+}
+
+
+// CHECK PRACTICE SET 1 AFTER THIS
