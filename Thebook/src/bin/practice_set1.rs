@@ -76,7 +76,7 @@ fn fib() {
     if n > 100 {
         println!("you input was too big");
     } else if n == 0 {
-        println!("0th fib no. is 0")
+        println!("0th fib no. is 0");
     } else {
         let mut prev = 0u128; //u128 to handle 100
         let mut current = 1u128;

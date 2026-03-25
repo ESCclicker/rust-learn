@@ -40,6 +40,19 @@ fn expression(){ //Expressions evaluate to a resultant value.
         println!("value of y is {y}"); //evaluates to 4
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //funtions with return values 
 // example1
 fn five() -> i32 {
