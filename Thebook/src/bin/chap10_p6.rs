@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 // Staying on the “Happy Path” with let...else
 #[derive(Debug)] // so we can inspect the state in a minute
 enum UsState {
@@ -41,7 +43,3 @@ fn main() {
         println!("{desc}");
     }
 }
-
-
-
-

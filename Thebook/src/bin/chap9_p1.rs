@@ -7,8 +7,6 @@ struct User {
 
 
 
-
-
 fn main() {
     let mut user1 = User {
         active: true,

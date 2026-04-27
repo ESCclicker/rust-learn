@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 #[derive(Debug)]
 enum UsState {
     Alabama,

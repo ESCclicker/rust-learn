@@ -26,7 +26,8 @@ The code may be simple, incomplete, or changes frequently as i explore Rust.
 
 ## Resources  
 - [The Rust Programming Language](https://doc.rust-lang.org/book/)
-- Other Rust Docs 
+- [Rustlings](https://github.com/rust-lang/rustlings/)
+- Other Rust Docs
 
 
 ## Credits  
