@@ -2,3 +2,11 @@
 title = "Learning Rust"
 authors = ["ESCclicker"]
 language = "en"
+
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
