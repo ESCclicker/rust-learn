@@ -60,7 +60,7 @@ fn five() -> i32 {
 }
 //example2
 fn plus_one(b:i32) -> i32 {
-        b+1  
+        b+1
 
 /* if we write it like this b+1;  then it will give error 
 because the defination of the function plus_one says that it will return an i32, but statements 

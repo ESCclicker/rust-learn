@@ -49,11 +49,11 @@ fn _if_else_chain(){
          } else if number % 2 ==0 {
             println!("numbe is divisible by 2")
          } else {
-            println!("number is not divisible by 4 and 3");
+            println!("number is not divisible by 4,3 or 2");
          }
 
 }
-// output of above code :-> number is divisible by 2 
+// output of above code :-> number is divisible by 3
 // but note that even though 6 is divisible by 2 also , we didn't
 // see the output for it ? and nor we saw the last statement?
 //as once rust finds the true statement it just execute it and didn't even check the rest 

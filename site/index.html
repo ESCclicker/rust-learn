@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rust Learn | GitHub Pages</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#0f1117;
+    --bg2:#171a21;
+    --card:#1f2430;
+    --line:rgba(255,255,255,.08);
+    --text:#f5f7ff;
+    --muted:#9ea7bd;
+    --orange:#ff7a18;
+    --orange2:#ffb347;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:
+        radial-gradient(circle at top right,#332011 0%,transparent 30%),
+        radial-gradient(circle at bottom left,#1d2437 0%,transparent 35%),
+        linear-gradient(135deg,var(--bg),#0a0d14 60%);
+    color:var(--text);
+    min-height:100vh;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+nav{
+    padding:24px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.logo{
+    font-size:1.2rem;
+    font-weight:800;
+}
+
+.logo span{
+    color:var(--orange);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:var(--muted);
+    text-decoration:none;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#fff;
+}
+
+.hero{
+    padding:70px 0 55px;
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:36px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:999px;
+    color:#ffd3ae;
+    margin-bottom:18px;
+    font-size:.85rem;
+}
+
+h1{
+    font-size:clamp(2.2rem,6vw,4.5rem);
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,var(--orange),var(--orange2));
+    background-clip: text;
+    -webkit-background-clip:text;
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:1.05rem;
+    max-width:620px;
+}
+
+.buttons{
+    margin-top:28px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:14px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.primary{
+    background:linear-gradient(135deg,var(--orange),#ff9447);
+    color:#111;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+}
+
+.secondary{
+    border:1px solid var(--line);
+    color:#fff;
+}
+
+.secondary:hover{
+    background:rgba(255,255,255,.05);
+}
+
+.panel{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:26px;
+}
+
+.code{
+    font-family:"JetBrains Mono",monospace;
+    color:#ffd2ae;
+    line-height:1.9;
+    font-size:.95rem;
+}
+
+.section{
+    padding:20px 0 10px;
+}
+
+.section h2{
+    margin-bottom:18px;
+    font-size:1.8rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:22px;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:16px;
+}
+
+.card a{
+    color:#ffb97d;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.card a:hover{
+    color:#fff;
+}
+
+footer{
+    margin-top:50px;
+    padding:30px 0 45px;
+    border-top:1px solid var(--line);
+    text-align:center;
+    color:var(--muted);
+}
+
+@media(max-width:860px){
+    .hero{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<nav>
+    <div class="logo">Rust<span>Learn</span></div>
+
+    <ul>
+        <!-- CHANGE THESE LINKS -->
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#repo">Repo</a></li>
+        <li><a href="https://github.com/ESCclicker" target="_blank">Contact</a></li>
+        <li><a href="https://github.com/ESCclicker/rust-learn" target="_blank">Source</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+<div>
+    <div class="badge">Learning Rust in Public</div>
+
+    <h1>
+        Build fearlessly with
+        <span class="gradient">Rust</span>
+    </h1>
+
+    <p>
+        A personal repository where I document my Rust journey,
+        experiments, code practice, mini projects and progress.
+        Learning one bug at a time.
+    </p>
+
+    <div class="buttons">
+
+        <!-- MAIN REPO LINK -->
+        <a class="btn primary"
+           href="https://github.com/ESCclicker/rust-learn"
+           target="_blank">
+           View Repository
+        </a>
+
+        <!-- CONTACT REDIRECT -->
+        <a class="btn secondary"
+           href="https://github.com/ESCclicker"
+           target="_blank">
+           Contact Me
+        </a>
+
+    </div>
+</div>
+
+<div class="panel">
+<div class="code">
+cargo new future<br>
+fn main() {<br>
+&nbsp;&nbsp;println!("Hello Rust");<br>
+}<br><br>
+
+Ownership ✔<br>
+Borrowing ✔<br>
+Lifetimes loading...
+</div>
+</div>
+
+</section>
+
+<section class="section" id="repo">
+<h2>Repository</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Main Learning Repo</h3>
+<p>
+Contains Rust practice code, notes, examples,
+small tools and experiments.
+</p>
+
+<!-- REPO LINK -->
+<a href="https://github.com/ESCclicker/rust-learn" target="_blank">
+Open Repository →
+</a>
+</div>
+
+<div class="card">
+<h3>Source Code</h3>
+<p>
+Full source for this GitHub Pages website.
+You can modify and customize it anytime.
+</p>
+
+<!-- SOURCE LINK -->
+<a href="https://github.com/ESCclicker/rust-learn" target="_blank">
+View Source →
+</a>
+</div>
+
+<div class="card">
+<h3>Contact</h3>
+<p>
+Want to collaborate, connect or talk Rust?
+Reach out through GitHub profile.
+</p>
+
+<!-- CONTACT LINK -->
+<a href="https://github.com/ESCclicker" target="_blank">
+Visit Profile →
+</a>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="resources">
+<h2>Useful Rust Links</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>The Rust Book</h3>
+<p>Best official place to learn Rust properly.</p>
+<a href="https://doc.rust-lang.org/book/" target="_blank">
+Open Resource →
+</a>
+</div>
+
+<div class="card">
+<h3>Rust by Example</h3>
+<p>Learn by running practical examples.</p>
+<a href="https://doc.rust-lang.org/rust-by-example/" target="_blank">
+Open Resource →
+</a>
+</div>
+
+<div class="card">
+<h3>Crates.io</h3>
+<p>Find community packages for your projects.</p>
+<a href="https://crates.io/" target="_blank">
+Open Resource →
+</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+Made with 🦀 + curiosity
+</footer>
+
+</div>
+
+</body>
+</html>
