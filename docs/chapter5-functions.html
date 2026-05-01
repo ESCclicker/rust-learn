@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello Cargo - Learning Rust</title>
+        <title>Functions - Learning Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -174,13 +174,99 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        
+                        <pre><code class="language-mermaid">---
+config:
+   look : handDrawn
+   theme : neutral
+---
+flowchart TD
+A[file.rs] -- run --&gt; main["main()"]
+main -- x() called in main --&gt; x[x will execute]
+main -- y() didn't called in main --&gt; y[y will not execute]
+
+style x fill:#a6e3a1,color:#1b1b29
+style y fill:#f38ba8,color:#1b1b29
+</code></pre>
+<blockquote>
+<p>[!question]- how function get called ?</p>
+<pre class="playground"><code class="language-rust">fn another_fn(){
+     println!("hello);
+}
+fn main() {
+      println!("world");
+     another_fn();
+}</code></pre>
+<blockquote>
+<p>[!success]- its output will be</p>
+<pre><code class="language-bash">world
+hello
+</code></pre>
+<p>as rust doesn’t care which fn u define first, it execute them in which sequence u call them inside the main(), if fun() didn’t get called inside main() then it will not get execute,</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!note]- parameteres
+we can pass parameters in fn body to</p>
+<pre class="playground"><code class="language-rust">fn main() {
+      print_measurements(5,'h');
+}
+fn print_measurements(value: i32,unit: char){
+      println!("the measurments is : {value}{unit}");
+}</code></pre>
+<ul>
+<li>must define each parameters type in fn signatures</li>
+<li>and pass the parameters while calling fn in main() body</li>
+</ul>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Statements</th><th>Expressions</th></tr>
+</thead>
+<tbody>
+<tr><td>instructions that perform some action and do not return a value.</td><td>Expressions evaluate to a resultant value.</td></tr>
+<tr><td>do not return value</td><td>return value</td></tr>
+<tr><td>let x = 22; is an statment</td><td>x +1  (at the end didn’t put <code>;</code> made it an expression)</td></tr>
+<tr><td>doing let x = (let y = 6); will give an error</td><td>doing let y = { <br>          let x = 3;<br>		  x+1<br>} will return output without error</td></tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>[!question]- how to define fn with return values ?</p>
+<pre class="playground"><code class="language-rust">fn five() -&gt; i32 {
+      5 // if we write 5; it will give an error
+}
+fn main() { 
+     let a = five(); // here five() will return value 5
+     let b = plus_one(5); 
+}
+fn plus_one(b:i32) -&gt; i32 {
+      b+1
+}</code></pre>
+<blockquote>
+<p>[!bug]- if we write b+1; than it will return in error like this</p>
+<pre><code class="language-bash">error[E0308]: mismatched types
+--&gt; src\bin\file.rs:62:23
+  |
+  | fn plus_one(b:i32) -&gt; i32 {
+  |    --------           ^^^ expected `i32` , found `()`
+  |    |           
+  |implicitly returns `()` as its body has no tails or `return` expression
+  |   b+1;
+  |     -help: remove this semicolon to return this value 
+</code></pre>
+</blockquote>
+</blockquote>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter4-datatypes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
 
-                            <a rel="next prefetch" href="chapter2-guessing-game-in-rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="chapter6-comments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -190,8 +276,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter4-datatypes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
 
-                    <a rel="next prefetch" href="chapter2-guessing-game-in-rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="chapter6-comments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
