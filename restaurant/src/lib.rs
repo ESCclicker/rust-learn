@@ -1,17 +1,6 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-        fn seat_at_table() {}
-    }
+mod front_of_house;
 
-    mod serving {
-        fn take_order() {}
-        fn save_order() {}
-        fn take_payment() {}
-    }
-}
-
-use crate::front_of_house::hosting;
+pub use crate::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
     //absolute path
@@ -61,6 +50,4 @@ mod back_of_house {
         Salad,
     }
 }
-
-
 
