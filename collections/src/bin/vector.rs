@@ -46,7 +46,11 @@ fn main() {
         SpreadsheetCell::Float(10.12),
         SpreadsheetCell::Text(String::from("blue")),
     ];
+    
 
+    for x in 0..v.len(){
+          println!("{}",v[x]);
+    }
 
 
 

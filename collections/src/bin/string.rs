@@ -38,5 +38,14 @@ fn main() {
     let s = format!("{s1}-{s2}-{s3}"); // also it doesn't take owenership of any
 
     // indexing into Strings
+    let s1 = String::from("hello");
+    let h = &s1[0..4];
+    
+    for c in "hello".chars() {
+        println!("{c}");
+    }
+    for b in "hello".bytes() {
+        println!("{b}");
+    }
     
 }
